@@ -1,10 +1,11 @@
 const slope = 1.2
+const intercept = 4
 const xValues = []
 const yValues = []
 
 for (let x = 0; x <= 10; x++) {
   xValues.push(x)
-  yValues.push(x * slope)
+  yValues.push((x * slope) + intercept)
 }
 
 let data = [{
@@ -14,7 +15,7 @@ let data = [{
 }]
 
 let layout = {
-  title: `Slope = ${slope}`,
+  title: `[Slope:${slope} | Intercept:${intercept}]`,
 }
 
 Plotly.newPlot("myPlot", data, layout)
