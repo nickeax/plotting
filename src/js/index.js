@@ -1,21 +1,26 @@
-const slope = 1.2
-const intercept = 4
-const xValues = []
-const yValues = []
+const xArray = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150]
+const yArray = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15]
 
-for (let x = 0; x <= 10; x++) {
-  xValues.push(x)
-  yValues.push((x * slope) + intercept)
-}
+// Define Data
+const data = [{
+  x: xArray,
+  y: yArray,
+  mode: "markers"
+}]
 
-let data = [{
-  x: xValues,
-  y: yValues,
+const data2 = [{
+  x: xArray,
+  y: yArray,
   mode: "lines"
 }]
 
-let layout = {
-  title: `[Slope:${slope} | Intercept:${intercept}]`,
+// Define Layout
+const layout = {
+  xaxis: { range: [40, 160], title: "Square Meters" },
+  yaxis: { range: [5, 16], title: "Price in Millions" },
+  title: "House Prices vs. Size"
 }
 
+// Display with Plotly
 Plotly.newPlot("myPlot", data, layout)
+Plotly.newPlot("myPlot2", data2, layout)
